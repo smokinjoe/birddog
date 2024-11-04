@@ -96,22 +96,18 @@
       "dateEnd": "June 2016",
       "experience": [
         {
-          "title": "Sole developer of in-house budget tracking software using Ruby on Rails backend to power an Angular.js front-end.",
           "order": 1,
           "description": "Sole developer of in-house budget tracking software using Ruby on Rails backend to power an Angular.js front-end."
         },
         {
-          "title": "Ultimately in charge of code reviews for all major feature builds.",
           "order": 2,
           "description": "Ultimately in charge of code reviews for all major feature builds."
         },
         {
-          "title": "Established several JavaScript IIFE patterns for adding new modules and integrated them via auto-injection based on controller path.",
           "order": 3,
           "description": "Established several JavaScript IIFE patterns for adding new modules and integrated them via auto-injection based on controller path."
         },
         {
-          "title": "Part of team that constructed a schedule planner with Ruby on Rails framework.",
           "order": 4,
           "description": "Part of team that constructed a scheduler with Ruby on Rails framework for as a SaaS as well as for a company that contracted our services."
         }
@@ -124,22 +120,18 @@
       "dateEnd": "November 2015",
       "experience": [
         {
-          "title": "untitled",
           "order": 1,
           "description": "Worked performing feature development (client and server side) on our platform consisting of Ruby on Rails framework applications, PostgreSQL and REDIS store, with unit and regression testing."
         },
         {
-          "title": "untitled",
           "order": 2,
           "description": "Tasked with converting Ruby on Rails model/view/controller for specific user-role experience to Angular.js factory/directive/service."
         },
         {
-          "title": "untitled",
           "order": 3,
           "description": "Broke down one of the platform applications from traditional MVC into controller/model driven api.  Helping to unify platform user experiences into a single application."
         },
         {
-          "title": "untitled",
           "order": 4,
           "description": "Assisted in conforming site experience of various user roles to follow accessibility standards."
         }
@@ -152,37 +144,30 @@
       "dateEnd": "February 2014",
       "experience": [
         {
-          "title": "untitled",
           "order": 1,
           "description": "Played a heavy role in building the JavaScript code from which product frames are rendered.  Major hurdles were reducing collisions with existing customer assets, maintaining a small file size, cross-compatibility and organization.  The tech stack utilized was grunt for compiling, yepnope for asynchronous asset loading, and dust templates for views.  This enabled the entire necessary code to exist in a single shop.js file."
         },
         {
-          "title": "untitled",
           "order": 2,
           "description": "Broke ground for the initial part of our platform: Shoppable Dashboard utilizing CodeIgniter."
         },
         {
-          "title": "untitled",
           "order": 3,
           "description": "Plays a customer support role for publishers trying to get Shoppable up and running."
         },
         {
-          "title": "untitled",
           "order": 4,
           "description": "Part of the team that built the Shoppable login portal for Merchants utilizing Ruby on Rails."
         },
         {
-          "title": "untitled",
           "order": 5,
           "description": "Design and construction of checkout views (initially via PHP then reconstructed in Ruby on Rails):  for enterprise users via rendering inside an iframe as well as self-serve where users are redirected to a 72Lux hosted checkout."
         },
         {
-          "title": "untitled",
           "order": 6,
           "description": "Whole lotta browser-compatibility testing: Desktop browsers, mobile browsers, tablets, different operating systems, etc..."
         },
         {
-          "title": "untitled",
           "order": 7,
           "description": "After losing the first CTO, worked tirelessly to help fill in the gaps, write up documentation and interview potential replacements."
         }
@@ -195,22 +180,18 @@
       "dateEnd": "December 2011",
       "experience": [
         {
-          "title": "untitled",
           "order": 1,
           "description": "Worked as a web developer and constructed MySQL Data powered Building and Development Websites with the back end written in PHP and the front end in HTML, CSS and JavaScript/jQuery plugins"
         },
         {
-          "title": "untitled",
           "order": 2,
           "description": "Developed a Site Application that utilized the CodeIgniter framework that provided database connections with additional logic that formed a back end to increase development efficiency"
         },
         {
-          "title": "untitled",
           "order": 3,
           "description": "Developed a CRM in order for various versions of Design Comparables to be displayed for clients"
         },
         {
-          "title": "untitled",
           "order": 4,
           "description": "Designed and developed multiple iOS applications for the iPad and iPhone for internal purposes"
         }
@@ -223,17 +204,14 @@
       "dateEnd": "August 2009",
       "experience": [
         {
-          "title": "untitled",
           "order": 1,
           "description": "In charge of upgrading various site cross-compatibility issues"
         },
         {
-          "title": "untitled",
           "order": 2,
           "description": "Provided modifications of various existing site issues specific to the listing service back end"
         },
         {
-          "title": "untitled",
           "order": 3,
           "description": "Maintained the front and back end of http://leiterrealty.com/"
         }
@@ -246,17 +224,14 @@
       "dateEnd": "December 2008",
       "experience": [
         {
-          "title": "untitled",
           "order": 1,
           "description": "Developed feature sets from assessed client needs"
         },
         {
-          "title": "untitled",
           "order": 2,
           "description": "Developed websites to be Search Engine Recognized"
         },
         {
-          "title": "untitled",
           "order": 3,
           "description": "Reverse-Engineer websites to troubleshoot existing issues"
         }

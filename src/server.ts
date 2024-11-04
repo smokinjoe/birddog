@@ -3,6 +3,9 @@ import * as dotenv from "dotenv";
 import cors from "cors";
 import helmet from "helmet";
 import fs from "fs";
+import { createDatabase } from "./datastore/InMemoryDatabase";
+import { Resume } from "./types/Resume";
+import { assertIsDefined } from "./utils/assertions";
 
 dotenv.config();
 
@@ -23,11 +26,30 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
+/**
+ * Initialization middleware
+ */
+
+const ResumeDatabase = createDatabase<Resume>();
+
+app.use((req, res, next) => {
+  const data = fs.readFileSync("./src/json/resume.json", "utf8");
+  const resume = JSON.parse(data);
+  ResumeDatabase.instance.set({
+    id: 1,
+    ...resume,
+  });
+  next();
+});
+
+/**
+ * Endpoint routes
+ */
 app.get("/api/resume", (req, res) => {
   try {
-    const data = fs.readFileSync("./src/json/resume.json", "utf8");
-    res.setHeader("Content-Type", "application/json");
-    res.end(JSON.stringify(JSON.parse(data), null, 2));
+    const resume = ResumeDatabase.instance.get(1);
+    assertIsDefined(resume, "Resume not found");
+    res.end(JSON.stringify(resume));
   } catch (e) {
     console.error(e);
   }
