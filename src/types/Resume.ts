@@ -40,7 +40,7 @@ export type ExperienceItem = {
 
 export type Language = {
   name: string;
-  rating: number;
+  score: number;
 };
 
 export type Project = {
