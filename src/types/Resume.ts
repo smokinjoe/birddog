@@ -21,7 +21,7 @@ export type Address = {
 
 export type TechnicalSkill = {
   description: string;
-  rating: number;
+  score: number;
 };
 
 export type EmploymentHistory = {
