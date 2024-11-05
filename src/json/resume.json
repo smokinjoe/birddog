@@ -2,7 +2,12 @@
   "name": "Joe Ekiert",
   "email": "joe.ekiert@gmail.com",
   "phone": "978.375.5916",
-
+  "address": {
+    "street": "343 South Bolton Road",
+    "city": "Bolton",
+    "state": "MA",
+    "zip": "01740"
+  },
   "technicalSkills": [
     {
       "title": "Languages and Markup",

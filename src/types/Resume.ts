@@ -3,10 +3,18 @@ export type Resume = {
   name: string;
   email: string;
   phone: number;
+  address: Address;
   technicalSkills: TechnicalSkill[];
   relevantExperience: RelevantExperience[];
   education: School[];
   references: string;
+};
+
+export type Address = {
+  street: string;
+  city: string;
+  state: string;
+  zip: number;
 };
 
 export type TechnicalSkill = {
