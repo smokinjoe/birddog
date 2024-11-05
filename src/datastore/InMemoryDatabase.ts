@@ -4,12 +4,12 @@ export type BaseRecord = {
 
 interface Database<TData extends BaseRecord> {
   set(newValue: TData): void;
-  get(id: string): TData | undefined;
+  get(id: number): TData | undefined;
 }
 
 export function createDatabase<TData extends BaseRecord>() {
   class InMemoryDatabase implements Database<TData> {
-    private db: Record<string, TData> = {};
+    private db: Record<number, TData> = {};
 
     static instance: InMemoryDatabase = new InMemoryDatabase();
 
@@ -17,7 +17,7 @@ export function createDatabase<TData extends BaseRecord>() {
       this.db[newValue.id] = newValue;
     }
 
-    get(id: string): TData | undefined {
+    get(id: number): TData | undefined {
       return this.db[id];
     }
   }

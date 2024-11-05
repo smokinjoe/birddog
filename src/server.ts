@@ -27,19 +27,15 @@ app.listen(PORT, () => {
 });
 
 /**
- * Initialization middleware
+ * Database initialization
  */
 
 const ResumeDatabase = createDatabase<Resume>();
-
-app.use((req, res, next) => {
-  const data = fs.readFileSync("./src/json/resume.json", "utf8");
-  const resume = JSON.parse(data);
-  ResumeDatabase.instance.set({
-    id: 1,
-    ...resume,
-  });
-  next();
+const data = fs.readFileSync("./src/json/resume.json", "utf8");
+const resume = JSON.parse(data);
+ResumeDatabase.instance.set({
+  id: 1,
+  ...resume,
 });
 
 /**
@@ -49,6 +45,7 @@ app.get("/api/resume", (req, res) => {
   try {
     const resume = ResumeDatabase.instance.get(1);
     assertIsDefined(resume, "Resume not found");
+    res.setHeader("Content-Type", "application/json");
     res.end(JSON.stringify(resume));
   } catch (e) {
     console.error(e);
