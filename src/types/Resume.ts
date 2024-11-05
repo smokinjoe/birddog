@@ -5,8 +5,10 @@ export type Resume = {
   phone: number;
   address: Address;
   technicalSkills: TechnicalSkill[];
-  relevantExperience: RelevantExperience[];
+  employmentHistory: EmploymentHistory[];
+  languages: Language[];
   education: School[];
+  projects: Project[];
   references: string;
 };
 
@@ -18,11 +20,11 @@ export type Address = {
 };
 
 export type TechnicalSkill = {
-  title: string;
-  items: string[];
+  description: string;
+  rating: number;
 };
 
-export type RelevantExperience = {
+export type EmploymentHistory = {
   company: string;
   title: string;
   dateStart: string;
@@ -32,6 +34,18 @@ export type RelevantExperience = {
 
 export type ExperienceItem = {
   order: number;
+  description: string;
+  skills: string[];
+};
+
+export type Language = {
+  name: string;
+  rating: number;
+};
+
+export type Project = {
+  title: string;
+  url: string;
   description: string;
 };
 
