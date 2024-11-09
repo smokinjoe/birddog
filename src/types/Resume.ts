@@ -39,7 +39,7 @@ export type Language = {
 };
 
 export type Project = {
-  title: string;
+  name: string;
   url: string;
   description: string;
 };
