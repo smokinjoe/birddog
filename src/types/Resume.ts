@@ -22,6 +22,7 @@ export type Address = {
 export type EmploymentHistory = {
   company: string;
   title: string;
+  location: string;
   dateStart: string;
   dateEnd: string;
   experience: ExperienceItem[];
