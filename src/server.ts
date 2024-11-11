@@ -41,7 +41,7 @@ ResumeDatabase.instance.set({
 /**
  * Endpoint routes
  */
-app.get("/api/resume", (req, res) => {
+app.get("/api/resume", (_req, res) => {
   try {
     const resume = ResumeDatabase.instance.get(1);
     assertIsDefined(resume, "Resume not found");
