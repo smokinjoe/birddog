@@ -10,8 +10,8 @@
     "JavaScript and TypeScript frameworks, React, Node, Express",
     "Test  writing with Jest and React Testing Library",
     "State management with Jotai, Redux, and React Query",
-    "UI design best practices with CSS/SASS",
-    "Experience with analytics tools, New Relic and Datadog",
+    "Building high quality user experiences with React components and  CSS/SASS",
+    "Tracking and understanding product health via New Relic and Datadog",
     "Excellent interpersonal skills and an outstanding ability to maintain team morale"
   ],
   "employmentHistory": [
@@ -168,7 +168,7 @@
   "education": [
     {
       "name": "Tufts University",
-      "degree": "BA in Computer Engineering",
+      "degree": "BS in Computer Engineering",
       "dateStart": "September 2001",
       "dateEnd": "June 2005"
     }
