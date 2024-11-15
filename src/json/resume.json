@@ -8,10 +8,12 @@
   },
   "technicalSkills": [
     "JavaScript and TypeScript frameworks, React, Node, Express",
-    "Test  writing with Jest and React Testing Library",
+    "Web socket development with Pusher and Firebase",
+    "Test writing with Jest and React Testing Library",
     "State management with Jotai, Redux, and React Query",
-    "Building high quality user experiences with React components and  CSS/SASS",
-    "Tracking and understanding product health via New Relic and Datadog",
+    "Building high quality user experiences with React components and CSS/SASS",
+    "Event tracking and understanding product health via New Relic and Datadog",
+    "Terraforming k8s pods and deploying to them via gitops.",
     "Excellent interpersonal skills and an outstanding ability to maintain team morale"
   ],
   "employmentHistory": [
@@ -39,12 +41,12 @@
         },
         {
           "order": 4,
-          "description": "Built the initial versions of vital Casino lobby UI components.",
+          "description": "Built the initial versions of vital lobby UI components for the Casino Web product that ranks either #1 or #2 in all legal locations (and #1 nationally as late as early 2024).",
           "skills": ["React", "TypeScript", "SASS"]
         },
         {
           "order": 5,
-          "description": "In charge of running weekly Casino Web Operations meetings.",
+          "description": "Started up and led weekly Casino Web Operations meetings.",
           "skills": []
         }
       ]
