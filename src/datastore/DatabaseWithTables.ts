@@ -9,6 +9,13 @@ interface DBTable<T extends BaseRecord> {
   get(id: string): T | undefined;
   getBy(key: keyof T, value: any): T[];
   update: (id: string, newValue: Partial<T>) => T | undefined;
+  first: () => T | undefined;
+  getAll: () => T[];
+}
+
+interface InMemoryDB {
+  createTable(name: string): void;
+  getTable<T extends BaseRecord>(name: string): DBTable<T>;
 }
 
 export function createTable<T extends BaseRecord>() {
@@ -84,13 +91,21 @@ export function createTable<T extends BaseRecord>() {
       this.table[id] = updatedRecord;
       return updatedRecord;
     }
+
+    first(): T | undefined {
+      return this.table[Object.keys(this.table)[0]];
+    }
+
+    getAll(): T[] {
+      return Object.values(this.table);
+    }
   }
 
   return new InMemoryDBTable();
 }
 
 export function createDatabase() {
-  class InMemoryDatabase {
+  class InMemoryDatabase implements InMemoryDB {
     private tables: Record<string, DBTable<any>> = {};
 
     createTable<T extends BaseRecord>(name: string) {
@@ -104,3 +119,5 @@ export function createDatabase() {
 
   return new InMemoryDatabase();
 }
+
+export type InMemoryDatabase = ReturnType<typeof createDatabase>;
