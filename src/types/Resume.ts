@@ -13,6 +13,7 @@ export type Resume = {
 };
 
 export type Address = {
+  id: string;
   street?: string;
   city: string;
   state: string;
@@ -20,6 +21,7 @@ export type Address = {
 };
 
 export type EmploymentHistory = {
+  id: string;
   company: string;
   title: string;
   location: string;
@@ -29,23 +31,27 @@ export type EmploymentHistory = {
 };
 
 export type ExperienceItem = {
+  id: string;
   order: number;
   description: string;
   skills: string[];
 };
 
 export type Language = {
+  id: string;
   name: string;
   proficiency: number;
 };
 
 export type Project = {
+  id: string;
   name: string;
   url: string;
   description: string;
 };
 
 export type School = {
+  id: string;
   name: string;
   degree: string;
   dateStart: string;

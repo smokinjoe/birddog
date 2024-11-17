@@ -1,43 +1,41 @@
-import fs from "fs";
-import { createDatabase } from "./DatabaseWithTables";
-import { Resume } from "../types/Resume";
+import { createDatabase, InMemoryDatabase } from "./DatabaseWithTables";
+import { seedTables } from "./seedTables";
 
-let resumeId: string | undefined;
-const DB: ReturnType<typeof createDatabase> = createDatabase();
+let DB: InMemoryDatabase;
 
 /**
  * Database initialization
  */
 export function initializeDatabase() {
-  DB.createTable<Resume>("resume");
-
-  const data = fs.readFileSync("./src/json/resume.json", "utf8");
-  const resume = JSON.parse(data);
-
-  resumeId = DB.getTable("resume").set({
-    ...resume,
-  });
+  if (DB === undefined) {
+    DB = createDatabase();
+    seedTables();
+  }
 }
 
 export function getDB() {
   return DB;
 }
 
-export function getResumeId(): Promise<string> {
-  return new Promise((resolve, reject) => {
-    let retries = 0;
-    const intervalId = setInterval(() => {
-      if (resumeId) {
-        resolve(resumeId);
-        clearInterval(intervalId);
-      }
+/**
+ * TODO: We'll want to move this to seedTables.ts .... I think
+ */
+// let resumeId: string | undefined;
+// export function getResumeId(): Promise<string> {
+//   return new Promise((resolve, reject) => {
+//     let retries = 0;
+//     const intervalId = setInterval(() => {
+//       if (resumeId) {
+//         resolve(resumeId);
+//         clearInterval(intervalId);
+//       }
 
-      if (retries === 5) {
-        reject("Could not retrieve resume id");
-        throw new Error("Could not retrieve resume id");
-      }
+//       if (retries === 5) {
+//         reject("Could not retrieve resume id");
+//         throw new Error("Could not retrieve resume id");
+//       }
 
-      ++retries;
-    }, 1000);
-  });
-}
+//       ++retries;
+//     }, 1000);
+//   });
+// }
