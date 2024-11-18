@@ -4,6 +4,7 @@ import cors from "cors";
 import helmet from "helmet";
 
 import { initializeDatabase } from "./datastore/initializeDatabase";
+import apiRouter from "./routes/api";
 import resumeRouter from "./routes/resume";
 
 dotenv.config();
@@ -25,6 +26,7 @@ app.use(helmet());
 /**
  * routes
  */
+app.use("/api/v1", apiRouter);
 app.use("/api/resume", resumeRouter);
 
 app.listen(PORT, () => {
