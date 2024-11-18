@@ -2,12 +2,13 @@ import express from "express";
 import * as dotenv from "dotenv";
 import cors from "cors";
 import helmet from "helmet";
-import fs from "fs";
-import { createDatabase } from "./datastore/InMemoryDatabase";
-import { Resume } from "./types/Resume";
-import { assertIsDefined } from "./utils/assertions";
+
+import { initializeDatabase } from "./datastore/initializeDatabase";
+import apiRouter from "./routes/api";
+import resumeRouter from "./routes/resume";
 
 dotenv.config();
+initializeDatabase();
 
 if (!process.env.PORT) {
   console.log(`No port value specified.`);
@@ -22,32 +23,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(helmet());
 
+/**
+ * routes
+ */
+app.use("/api/v1", apiRouter);
+app.use("/api/resume", resumeRouter);
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-});
-
-/**
- * Database initialization
- */
-
-const ResumeDatabase = createDatabase<Resume>();
-const data = fs.readFileSync("./src/json/resume.json", "utf8");
-const resume = JSON.parse(data);
-ResumeDatabase.instance.set({
-  id: 1,
-  ...resume,
-});
-
-/**
- * Endpoint routes
- */
-app.get("/api/resume", (req, res) => {
-  try {
-    const resume = ResumeDatabase.instance.get(1);
-    assertIsDefined(resume, "Resume not found");
-    res.setHeader("Content-Type", "application/json");
-    res.end(JSON.stringify(resume));
-  } catch (e) {
-    console.error(e);
-  }
 });
