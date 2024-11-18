@@ -9,7 +9,6 @@ educationHandler.get("/education", async (_req: Request, res: Response) => {
     res.setHeader("Content-Type", "application/json");
     res.end(JSON.stringify(education));
   } catch (e) {
-    console.log("JOE:");
     console.error(e);
   }
 });

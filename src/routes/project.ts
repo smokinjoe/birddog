@@ -9,7 +9,6 @@ projectRouter.get("/project", async (_req: Request, res: Response) => {
     res.setHeader("Content-Type", "application/json");
     res.end(JSON.stringify(project));
   } catch (e) {
-    console.log("JOE:");
     console.error(e);
   }
 });
