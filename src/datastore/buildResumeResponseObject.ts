@@ -8,7 +8,7 @@ export function buildResumeResponseObject(db: InMemoryDatabase): Resume {
   const employmentHistory = db.getTable("EmploymentHistories").getAll();
   const languages = db.getTable("Languages").getAll();
   const projects = db.getTable("Projects").getAll();
-  const education = db.getTable("Schools").getAll();
+  const education = db.getTable("Education").getAll();
 
   const responseObject = {
     ...baseResumeObject,

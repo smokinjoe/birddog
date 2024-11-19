@@ -5,10 +5,9 @@ import {
   EmploymentHistory,
   Language,
   Project,
-  // Resume,
-  School,
-} from "../types/Resume";
-import { Resume } from "../types/schemas/ResumeSchema";
+  Resume,
+  Education,
+} from "../types/schemas";
 import { getDB } from "./initializeDatabase";
 
 export function seedTables() {
@@ -61,8 +60,8 @@ export function seedTables() {
   /**
    * Seed school data
    */
-  DB.createTable<School>("Schools");
-  resume.education.forEach((school: School) => {
-    DB.getTable("Schools").set(school);
+  DB.createTable<Education>("Education");
+  resume.education.forEach((school: Education) => {
+    DB.getTable("Education").set(school);
   });
 }
