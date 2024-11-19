@@ -5,9 +5,10 @@ import {
   EmploymentHistory,
   Language,
   Project,
-  Resume,
+  // Resume,
   School,
 } from "../types/Resume";
+import { Resume } from "../types/schemas/ResumeSchema";
 import { getDB } from "./initializeDatabase";
 
 export function seedTables() {
