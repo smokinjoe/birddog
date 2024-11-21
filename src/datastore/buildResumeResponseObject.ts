@@ -1,5 +1,6 @@
 import { InMemoryDatabase } from "../datastore/DatabaseWithTables";
 import { Resume, ResumeSchema } from "../types/schemas/ResumeSchema";
+import { ValidationError } from "../utils/errors/error";
 import { parseZod } from "../utils/zod-helpers";
 
 export function buildResumeResponseObject(db: InMemoryDatabase): Resume {
@@ -22,7 +23,9 @@ export function buildResumeResponseObject(db: InMemoryDatabase): Resume {
   const result = parseZod(ResumeSchema, responseObject);
 
   if (!result.valid) {
-    throw new Error(`Invalid Resume object: ${result.errors.join(", ")}`);
+    throw new ValidationError(
+      `Invalid Resume object: ${result.errors.join(", ")}`
+    );
   }
 
   return responseObject;

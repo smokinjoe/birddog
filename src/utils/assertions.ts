@@ -1,10 +1,17 @@
-type AssertError = string;
+import { BirddogError } from "./errors/error";
 
-function handleError(
-  defaultMessage: string,
-  errorMessage?: AssertError
-): never {
-  throw new Error(errorMessage ?? defaultMessage);
+type AssertError = string | BirddogError;
+
+function handleError(defaultMessage: string, error?: AssertError): never {
+  if (error === undefined) {
+    throw new Error(defaultMessage);
+  }
+
+  if (typeof error === "string") {
+    throw new Error(error);
+  }
+
+  throw error;
 }
 
 export function assertIsDefined<TData>(
