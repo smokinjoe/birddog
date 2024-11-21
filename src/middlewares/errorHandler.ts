@@ -1,5 +1,4 @@
 import { NextFunction, Request, Response } from "express";
-import { getErrorMessage } from "../utils/errors/getErrorMessage";
 import { handleError } from "../utils/errors/handleError";
 
 export const errorHandler = (
@@ -8,6 +7,5 @@ export const errorHandler = (
   res: Response,
   _next: NextFunction
 ) => {
-  const errorMessage = getErrorMessage(error);
-  handleError({ res, errorMessage, statusCode: 500 });
+  handleError({ res, error, statusCode: 500 });
 };

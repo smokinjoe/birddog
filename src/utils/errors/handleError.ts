@@ -24,15 +24,16 @@ const getErrorResponse = (
 type HandleErrorProps = {
   res: Response;
   statusCode?: number;
-  errorMessage?: string;
+  error: unknown;
 };
 
 export const handleError = ({
   res,
   statusCode = 500,
-  errorMessage = "An error occurred.",
+  error,
 }: HandleErrorProps) => {
-  getLogger().error(errorMessage);
+  const errorMessage = getErrorMessage(error);
+  getLogger().error(error as Error);
 
   res.setHeader("Content-Type", "application/json");
   res.status(statusCode).json(getErrorResponse(errorMessage, statusCode));
@@ -48,13 +49,13 @@ export const handleBirddogError = ({ res, error }: HandleBirddogError) => {
     handleError({
       res,
       statusCode: error.statusCode,
-      errorMessage: error.message,
+      error,
     });
   } else {
     handleError({
       res,
       statusCode: 500,
-      errorMessage: getErrorMessage(error),
+      error,
     });
   }
 };
