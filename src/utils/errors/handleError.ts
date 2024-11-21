@@ -1,5 +1,5 @@
 import { Response } from "express";
-import { Logger, LoggerFactory } from "../logging/LoggerFactory";
+import { getLogger } from "../logging/logger";
 import { getErrorMessage } from "./getErrorMessage";
 import { BirddogError } from "./error";
 
@@ -25,54 +25,36 @@ type HandleErrorProps = {
   res: Response;
   statusCode?: number;
   errorMessage?: string;
-  logger?: Logger;
 };
 
 export const handleError = ({
   res,
   statusCode = 500,
   errorMessage = "An error occurred.",
-  logger,
 }: HandleErrorProps) => {
-  if (logger) {
-    logger.setCustomAttributes({ errorCode: statusCode }).error(errorMessage);
-  } else {
-    LoggerFactory.getLogger()
-      .setCustomAttributes({ errorCode: statusCode })
-      .error(errorMessage);
-  }
+  getLogger().error(errorMessage);
 
   res.setHeader("Content-Type", "application/json");
-  res
-    .status(statusCode)
-    .send(JSON.stringify(getErrorResponse(errorMessage, statusCode)));
-  // .json(getErrorResponse(errorMessage, statusCode));
+  res.status(statusCode).json(getErrorResponse(errorMessage, statusCode));
 };
 
 type HandleBirddogError = {
   res: Response;
   error: unknown;
-  logger?: Logger;
 };
 
-export const handleBirddogError = ({
-  res,
-  error,
-  logger,
-}: HandleBirddogError) => {
+export const handleBirddogError = ({ res, error }: HandleBirddogError) => {
   if (error instanceof BirddogError) {
     handleError({
       res,
       statusCode: error.statusCode,
       errorMessage: error.message,
-      logger,
     });
   } else {
     handleError({
       res,
       statusCode: 500,
       errorMessage: getErrorMessage(error),
-      logger,
     });
   }
 };

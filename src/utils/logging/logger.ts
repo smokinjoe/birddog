@@ -1,12 +1,12 @@
-import { LogEmitter, LoggerAttributes, LogEvent } from "./logger.types";
+import { LogEmitter, LogEvent } from "./logger.types";
 import { createLogParser } from "./logParser";
 
-const logParser = createLogParser<LoggerAttributes>();
+const logParser = createLogParser();
 
 const getLogClient = (emitter: LogEmitter) => {
   return {
-    error: (error: Error | string, data?: LoggerAttributes) => {
-      emitter.emit(logParser("error", error, data));
+    error: (error: Error | string) => {
+      emitter.emit(logParser("error", error));
     },
     debug: (message: string) => {
       emitter.emit(logParser("debug", message));
@@ -14,8 +14,6 @@ const getLogClient = (emitter: LogEmitter) => {
   };
 };
 
-// Our own internal logger that helps clean up our messages/errors before
-// logging it to the console
 const getDevEmitter = () => {
   const devLogEmitter: LogEmitter = {
     emit: (event: LogEvent) => {
@@ -26,9 +24,6 @@ const getDevEmitter = () => {
       }
       if (event.error) {
         console.log(levelPrefix, event.error);
-      }
-      if (event.data) {
-        console.log(levelPrefix, event.data);
       }
     },
   };
