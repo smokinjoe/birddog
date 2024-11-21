@@ -5,7 +5,6 @@ interface IBirddogError extends Error {
 
 export type ErrorOptions = {
   statusCode?: number;
-  message?: string;
   innerError?: Error;
 };
 
