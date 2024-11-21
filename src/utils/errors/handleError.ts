@@ -44,4 +44,5 @@ export const handleError = ({
   res
     .status(statusCode)
     .send(JSON.stringify(getErrorResponse(errorMessage, statusCode)));
+  // .json(getErrorResponse(errorMessage, statusCode));
 };

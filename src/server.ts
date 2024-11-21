@@ -4,6 +4,7 @@ import cors from "cors";
 import helmet from "helmet";
 
 import { initializeDatabase } from "./datastore/initializeDatabase";
+import { errorHandler } from "./middlewares/errorHandler";
 import apiRouter from "./routes/api";
 import resumeRouter from "./routes/resume";
 
@@ -33,6 +34,11 @@ app.use(helmet());
 
 app.use("/api/v1", apiRouter);
 app.use("/api/resume", resumeRouter);
+
+/**
+ * Error handling
+ */
+app.use(errorHandler);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

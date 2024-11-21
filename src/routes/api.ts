@@ -1,5 +1,7 @@
 import express from "express";
 
+import { asyncHandler } from "../utils/asyncHandler";
+
 import resumeRouter from "./resume";
 import employmentHistoryRouter from "./employmentHistory";
 import projectRouter from "./project";
@@ -9,11 +11,11 @@ import educationRouter from "./education";
 const apiRouter = express.Router();
 
 apiRouter.use("/", [
-  resumeRouter,
-  employmentHistoryRouter,
-  projectRouter,
-  languageRouter,
-  educationRouter,
+  asyncHandler(resumeRouter),
+  asyncHandler(employmentHistoryRouter),
+  asyncHandler(projectRouter),
+  asyncHandler(languageRouter),
+  asyncHandler(educationRouter),
 ]);
 
 export default apiRouter;
