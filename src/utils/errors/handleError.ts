@@ -1,5 +1,7 @@
 import { Response } from "express";
 import { Logger, LoggerFactory } from "../logging/LoggerFactory";
+import { getErrorMessage } from "./getErrorMessage";
+import { BirddogError } from "./error";
 
 /**
  * Need to figure out where I can use this
@@ -45,4 +47,32 @@ export const handleError = ({
     .status(statusCode)
     .send(JSON.stringify(getErrorResponse(errorMessage, statusCode)));
   // .json(getErrorResponse(errorMessage, statusCode));
+};
+
+type HandleBirddogError = {
+  res: Response;
+  error: unknown;
+  logger?: Logger;
+};
+
+export const handleBirddogError = ({
+  res,
+  error,
+  logger,
+}: HandleBirddogError) => {
+  if (error instanceof BirddogError) {
+    handleError({
+      res,
+      statusCode: error.statusCode,
+      errorMessage: error.message,
+      logger,
+    });
+  } else {
+    handleError({
+      res,
+      statusCode: 500,
+      errorMessage: getErrorMessage(error),
+      logger,
+    });
+  }
 };
