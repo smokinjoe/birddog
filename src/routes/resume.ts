@@ -1,6 +1,8 @@
 import express, { Request, Response } from "express";
 
 import { getResumeHandler } from "../handlers/resume";
+import { handleError } from "../utils/errors/handleError";
+import { getErrorMessage } from "../utils/errors/getErrorMessage";
 
 const resumeRouter = express.Router();
 
@@ -12,8 +14,9 @@ const tempGetRoute = async (_req: Request, res: Response) => {
     const resume = await getResumeHandler();
     res.setHeader("Content-Type", "application/json");
     res.end(JSON.stringify(resume));
-  } catch (e) {
-    console.error(e);
+  } catch (error) {
+    const errorMessage = getErrorMessage(error);
+    handleError({ res, errorMessage, statusCode: 500 });
   }
 };
 

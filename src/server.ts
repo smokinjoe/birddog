@@ -18,6 +18,10 @@ const PORT = parseInt(process.env.PORT as string, 10);
 
 const app = express();
 
+/**
+ * Middlewares
+ */
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
@@ -26,6 +30,7 @@ app.use(helmet());
 /**
  * routes
  */
+
 app.use("/api/v1", apiRouter);
 app.use("/api/resume", resumeRouter);
 
