@@ -1,8 +1,8 @@
 import express, { Request, Response } from "express";
-import { getEmploymentHistoryHandler } from "../handlers/employmentHistory";
-import { NotFoundError } from "../utils/errors/error";
-import { assertIsDefined } from "../utils/assertions";
-import { handleBirddogError } from "../utils/errors/handleError";
+import { getEmploymentHistoryHandler } from "@/handlers/employmentHistory";
+import { NotFoundError } from "@/utils/errors/error";
+import { assertIsDefined } from "@/utils/assertions";
+import { handleBirddogError } from "@/utils/errors/handleError";
 
 const employmentHistoryRouter = express.Router();
 

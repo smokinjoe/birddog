@@ -6,6 +6,7 @@
     "city": "Bolton",
     "state": "MA"
   },
+  "website": "http://joeekiert.com",
   "technicalSkills": [
     "JavaScript and TypeScript frameworks, React, Node, Express",
     "Web socket development with Pusher and Firebase",

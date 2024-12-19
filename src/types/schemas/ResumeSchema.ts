@@ -4,6 +4,7 @@ import { EducationSchema } from "./EducationSchema";
 import { EmploymentHistorySchema } from "./EmploymentHistorySchema";
 import { LanguageSchema } from "./LanguageSchema";
 import { ProjectSchema } from "./ProjectSchema";
+import { zcustom } from "../../utils/zod-helpers";
 
 export const ResumeSchema = z.object({
   id: z.string(),
@@ -19,4 +20,10 @@ export const ResumeSchema = z.object({
   references: z.string(),
 });
 
+export const ResumeV2Schema = ResumeSchema.extend({
+  website: zcustom.url(),
+});
+
 export type Resume = z.infer<typeof ResumeSchema>;
+
+export type ResumeV2 = z.infer<typeof ResumeV2Schema>;

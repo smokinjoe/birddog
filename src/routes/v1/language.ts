@@ -1,8 +1,8 @@
 import express, { Request, Response } from "express";
-import { getLanguageHandler } from "../handlers/language";
-import { handleBirddogError } from "../utils/errors/handleError";
-import { assertIsDefined } from "../utils/assertions";
-import { NotFoundError } from "../utils/errors/error";
+import { getLanguageHandler } from "@/handlers/language";
+import { handleBirddogError } from "@/utils/errors/handleError";
+import { assertIsDefined } from "@/utils/assertions";
+import { NotFoundError } from "@/utils/errors/error";
 
 const languageRouter = express.Router();
 

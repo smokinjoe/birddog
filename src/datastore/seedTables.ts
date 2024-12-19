@@ -23,6 +23,7 @@ export function seedTables() {
     name: resume.name,
     email: resume.email,
     phone: resume.phone,
+    website: resume.website,
     references: resume.references,
     technicalSkills: resume.technicalSkills,
   });

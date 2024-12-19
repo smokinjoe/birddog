@@ -1,8 +1,8 @@
 import express, { Request, Response } from "express";
-import { getProjectHandler } from "../handlers/project";
-import { handleBirddogError } from "../utils/errors/handleError";
-import { assertIsDefined } from "../utils/assertions";
-import { NotFoundError } from "../utils/errors/error";
+import { getProjectHandler } from "@/handlers/project";
+import { handleBirddogError } from "@/utils/errors/handleError";
+import { assertIsDefined } from "@/utils/assertions";
+import { NotFoundError } from "@/utils/errors/error";
 
 const projectRouter = express.Router();
 

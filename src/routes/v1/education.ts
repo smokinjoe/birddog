@@ -1,8 +1,8 @@
 import express, { Request, Response } from "express";
-import { getEducationHandler } from "../handlers/education";
-import { assertIsDefined } from "../utils/assertions";
-import { handleBirddogError } from "../utils/errors/handleError";
-import { NotFoundError } from "../utils/errors/error";
+import { getEducationHandler } from "@/handlers/education";
+import { assertIsDefined } from "@/utils/assertions";
+import { handleBirddogError } from "@/utils/errors/handleError";
+import { NotFoundError } from "@/utils/errors/error";
 
 const educationHandler = express.Router();
 
