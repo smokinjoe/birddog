@@ -6,6 +6,7 @@
     "city": "Bolton",
     "state": "MA"
   },
+  "website": "http://joeekiert.com",
   "technicalSkills": [
     "JavaScript and TypeScript frameworks, React, Node, Express",
     "Web socket development with Pusher and Firebase",
@@ -177,19 +178,19 @@
   ],
   "projects": [
     {
-      "name": "Advent of Code 2023",
-      "url": "https://github.com/smokinjoe/advent-of-code-2023",
-      "description": "Solving a number of coding challenges with TypeScript."
-    },
-    {
       "name": "React Resume V2",
       "url": "https://github.com/smokinjoe/react-resume-v2",
-      "description": "My current resume built using React, driven by a self-built API."
+      "description": "A react app that fetches data from the Resume API project below, and renders the UI using the mantine component library. As a bonus, there are three different state manager implementations available to view."
     },
     {
       "name": "Birddog service",
       "url": "https://github.com/smokinjoe/birddog",
       "description": "A lean Express.js driven API that relies on an InMemoryDB datastore."
+    },
+    {
+      "name": "Advent of Code 2023",
+      "url": "https://github.com/smokinjoe/advent-of-code-2023",
+      "description": "Solving a number of coding challenges with TypeScript."
     }
   ],
   "references": "References available upon request"
