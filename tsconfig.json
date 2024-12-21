@@ -16,9 +16,9 @@
     "noUnusedParameters": true /* Raise an error when a function parameter isn't read. */,
     "noFallthroughCasesInSwitch": true /* Enable error reporting for fallthrough cases in switch statements. */,
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
-    "baseUrl": "./src", // Set the base directory for resolving modules
+    "baseUrl": "./src", // Ensure the baseUrl is correctly set
     "paths": {
-      "@/*": ["./*"] // Define a path alias for your project root
+      "@/*": ["*"] // Adjust the path alias to match the baseUrl
     }
   },
   "include": ["src/**/*.ts"],
