@@ -37,7 +37,7 @@ export function buildResumeResponseObject(db: InMemoryDatabase): Resume {
 }
 
 export function buildResumeV2ResponseObject(db: InMemoryDatabase): ResumeV2 {
-  const baseResumeObject = db.getTable("Resume").first();
+  const baseResumeObject = db.getTable("ResumeV2").first();
   const address = db.getTable("Addresses").first();
   const employmentHistory = db.getTable("EmploymentHistories").getAll();
   const languages = db.getTable("Languages").getAll();
