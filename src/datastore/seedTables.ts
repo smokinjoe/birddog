@@ -7,7 +7,8 @@ import {
   Project,
   Resume,
   Education,
-} from "../types/schemas";
+  ResumeV2,
+} from "@/types/schemas";
 import { getDB } from "./initializeDatabase";
 
 export function seedTables() {
@@ -23,6 +24,19 @@ export function seedTables() {
     name: resume.name,
     email: resume.email,
     phone: resume.phone,
+    references: resume.references,
+    technicalSkills: resume.technicalSkills,
+  });
+
+  /**
+   * Seed base resume data
+   */
+  DB.createTable<ResumeV2>("ResumeV2");
+  DB.getTable("ResumeV2").set({
+    name: resume.name,
+    email: resume.email,
+    phone: resume.phone,
+    website: resume.website,
     references: resume.references,
     technicalSkills: resume.technicalSkills,
   });

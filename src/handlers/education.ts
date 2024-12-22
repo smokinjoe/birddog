@@ -1,4 +1,4 @@
-import { getDB } from "../datastore/initializeDatabase";
+import { getDB } from "@/datastore/initializeDatabase";
 
 export async function getEducationHandler() {
   const db = getDB();

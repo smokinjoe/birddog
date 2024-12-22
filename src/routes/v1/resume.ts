@@ -1,10 +1,10 @@
 import express, { Request, Response } from "express";
 
-import { getResumeHandler } from "../handlers/resume";
-import { asyncHandler } from "../utils/asyncHandler";
-import { handleBirddogError } from "../utils/errors/handleError";
-import { assertIsDefined } from "../utils/assertions";
-import { NotFoundError } from "../utils/errors/error";
+import { getResumeHandler } from "@/handlers/resume";
+import { asyncHandler } from "@/utils/asyncHandler";
+import { handleBirddogError } from "@/utils/errors/handleError";
+import { assertIsDefined } from "@/utils/assertions";
+import { NotFoundError } from "@/utils/errors/error";
 
 const resumeRouter = express.Router();
 

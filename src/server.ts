@@ -5,8 +5,9 @@ import helmet from "helmet";
 
 import { initializeDatabase } from "./datastore/initializeDatabase";
 import { errorHandler } from "./middlewares/errorHandler";
-import apiRouter from "./routes/api";
-import resumeRouter from "./routes/resume";
+import apiRouter from "./routes/v1/api";
+import apiV2Router from "./routes/v2/api";
+import resumeRouter from "./routes/v1/resume";
 
 dotenv.config();
 initializeDatabase();
@@ -34,6 +35,8 @@ app.use(helmet());
 
 app.use("/api/v1", apiRouter);
 app.use("/api/resume", resumeRouter);
+
+app.use("/api/v2", apiV2Router);
 
 /**
  * Error handling
