@@ -27,26 +27,31 @@
       "experience": [
         {
           "order": 1,
+          "description": "Built the initial versions of lobby UI components in React for the Casino Web product that ranks either #1 or #2 in all legal locations (and #1 nationally as late as early 2024).",
+          "skills": ["React", "TypeScript", "SASS"]
+        },
+        {
+          "order": 2,
+          "description": "Expanded our Casino web user experience with new React components, services, and custom hooks written in TypeScript.",
+          "skills": ["React", "TypeScript", "SASS"]
+        },
+        {
+          "order": 3,
           "description": "Tech planned and led the implementation of a client-side Observability initiative for the Casino Web product.",
           "skills": ["New Relic", "TypeScript", "React"]
         },
         {
-          "order": 2,
+          "order": 4,
           "description": "Worked alongside architecture to integrate express middlewares that standardized a number of vital actions.",
           "skills": ["Express", "Node", "TypeScript"]
         },
         {
-          "order": 3,
+          "order": 5,
           "description": "Played a vital role in developing the process for expanding the Casino Web product to new jurisdictions.",
           "skills": []
         },
         {
-          "order": 4,
-          "description": "Built the initial versions of vital lobby UI components for the Casino Web product that ranks either #1 or #2 in all legal locations (and #1 nationally as late as early 2024).",
-          "skills": ["React", "TypeScript", "SASS"]
-        },
-        {
-          "order": 5,
+          "order": 6,
           "description": "Started up and led weekly Casino Web Operations meetings.",
           "skills": []
         }
